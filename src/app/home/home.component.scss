@@ -1,0 +1,128 @@
+.tab-pro{
+    width: 100%;
+    list-style: none;
+    text-align: center;
+    .content{
+        width: 82%;
+        margin: 0 auto;
+        display: block;
+        border-bottom: 1px solid #bbb;
+    }
+    .tab-title{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid #ddd;
+        .tab-title-item{
+            display: inline;
+            padding: 15px 35px;
+            margin: 0 3px;
+            border-radius: 0;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border: 0;
+        }
+        .tab-title-item:hover, .active{
+            background-color: #80e324;
+            color: #fff;
+        }
+    }
+    .tab-content{
+        margin-top: 20px;
+        .col-md-4{
+            margin-bottom: 20px;
+        }
+        .tab-card{
+            border: 5px solid transparent;
+            -moz-transition: all 0.3s ease 0s;
+            -webkit-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            -ms-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+            .card-top{
+                height: 50px;
+                background-color: #fff;
+                font-size: 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid #ddd;
+                section{
+                    display: inline-block;
+                }
+                .prod-name{
+                    width: 70%;
+                    line-height: 25px;
+                    padding: 0 15px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                .prod-price{
+                    width: 30%;
+                    height: 100%;
+                    line-height: 45px;
+                    background-color: #83e329;
+                    color: #FFFF00;
+                    font-family: initial;
+                    font-size: 17px;
+                }
+            }
+            .card-body{
+                position: relative;
+                .thumbnail{
+                    margin: 0;
+                    padding: 0;
+                    border: 0;
+                    img{
+                        height: 207px;
+                    }
+                }
+                .entry-card{
+                    height: 207px;
+                    width: 100%;
+                    background-color: rgba(131, 227, 41, 0.9);
+                    color: #fff;
+                    position: absolute;
+                    top: 0;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    opacity: 0;
+                    transition: all .25s ease-out 0s;
+                    -webkit-transition: all .25s ease-out 0s;
+                    -o-transition: all .25s ease-out 0s;
+                    -moz-transition: all .25s ease-out 0s;
+                    ul{
+                        li{
+                            text-align: initial;
+                            background: url('../../assets/image/tich.png') left 7px no-repeat;
+                            padding-left: 20px;
+                            list-style: none;
+                        }
+                    }
+                    a{
+                        display: inline-flex;
+                        width: 120px;
+                        justify-content: center;
+                        border: 0;
+                        color: #388E3C;
+                    }
+                }
+            }
+            .card-bottom{
+
+            }
+        }
+        .tab-card:hover{
+            border: 5px solid rgba(131, 227, 41, .9);
+            padding: 0;
+            .card-body{
+                .entry-card{
+                    opacity:1
+                }
+            }
+        }
+    }
+}

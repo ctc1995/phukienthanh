@@ -1,0 +1,33 @@
+<section class="content">
+  <section class="row tab-content">
+    <section class="col-md-4" *ngFor="let item of typeLists">
+      <section class="tab-card">
+        <section class="card-top">
+          <section class="prod-name">
+            {{item.name}}
+          </section>
+          <section class="prod-price">
+            {{item.price}}
+          </section>
+        </section>
+        <section class="card-body">
+          <section class="thumbnail">
+            <img src="{{item.pic}}" alt="{{item.intro.title}}">
+          </section>
+          <section class="entry-card" [ngClass]="">
+            <p>{{item.intro.title}}</p>
+            <ul>
+              <li *ngFor="let introItem of item.intro.content">
+                {{introItem}}
+              </li>
+            </ul>
+            <a class="btn btn-default" (click)="onSelect(item.name)">Xem chi tiết</a>
+          </section>
+        </section>
+        <section class="card-bottom">
+
+        </section>
+      </section>
+    </section>
+  </section>
+</section>

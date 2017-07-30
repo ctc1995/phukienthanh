@@ -1,0 +1,13 @@
+<section class="row news">
+  <section class="content">
+    <section class="col-md-12 item" *ngFor="let item of newLists">
+      <a href="{{item.href}}" class="img-href">
+        <img src="{{item.imgUrl}}" alt="{{item.imgUrl}}">
+      </a>
+      <section class="text">
+        <a href="{{item.href}}">{{item.title}}</a>
+        <span>{{item.desrc}}</span>
+      </section>
+    </section>
+  </section>
+</section>

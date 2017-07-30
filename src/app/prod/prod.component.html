@@ -1,0 +1,80 @@
+<section class="prod">
+  <section class="content">
+    <section class="row prod-card" *ngFor="let item of testJSON">
+      <section class="col-md-4 prod-img" id="prodImg">
+        <img src="{{item.pic}}" alt="{{item.name}}">
+      </section>
+      <section class="col-md-8" SetHeight>
+        <section class="prod-info">
+          <section class="title">{{item.name}}</section>
+          <section class="category">
+            <a href="http://phukienviettrung.vn/cat/51-mic-karaooke/">{{item.type}}</a>
+          </section>
+          <section class="price">
+            <span class="price-one">{{item.price}}</span>
+          </section>
+          <section class="description">
+            <p>{{item.intro.title}}</p>
+              <ul>
+                <li *ngFor="let introItem of item.intro.content">
+                  {{introItem}}
+                </li>
+              </ul>
+          </section>
+          <!--<section class="action">
+            <a href="http://phukienviettrung.vn/cart-377.html" class="icon-buy icon-buy-but" title="Đặt mua">Mua ngay giao tận nơi<small>(Xem hàng, không mua không sao)</small></a>
+            <a href="http://phukienviettrung.vn/cart-377.html" class="icon-like" title="Yêu thích">Thêm sản phẩm vào giỏ hàng<small>(Dành cho mua cùng lúc nhiều sản phẩm)</small></a>
+          </section>-->
+        </section>
+      </section>
+    </section>
+    <section class="row prod-descr">
+      <section class="col-md-8 btn-group tab-title">
+        <section class="tab-title-content">
+          <li class="btn btn-default tab-title-item"
+            *ngFor="let v of tabTitle let i=index" 
+            (click)="selectTab(i)"
+            [ngClass]="{'active': selected == i}">
+            {{v}}
+          </li>
+        </section>
+        <section class="panel panel-default tab-content">
+          <section class="panel-body">
+            Panel content
+          </section>
+        </section>
+    </section>
+    <section class="col-md-4 correlation">
+        <p>Sản phẩm liên quan</p>
+        <section>
+          <section class="tab-card" *ngFor="let item of xiangguan">
+            <section class="card-top">
+              <section class="prod-name">
+                {{item.name}}
+              </section>
+              <section class="prod-price">
+                {{item.price}}
+              </section>
+            </section>
+            <section class="card-body">
+              <section class="thumbnail">
+                <img src="{{item.pic}}" alt="{{item.intro.title}}">
+              </section>
+              <section class="entry-card" [ngClass]="">
+                <p>{{item.intro.title}}</p>
+                <ul>
+                  <li *ngFor="let introItem of item.intro.content">
+                    {{introItem}}
+                  </li>
+                </ul>
+                <a href="" class="btn btn-default" (click)="onSelect(item.name)">Xem chi tiết</a>
+              </section>
+            </section>
+            <section class="card-bottom">
+
+            </section>
+          </section>
+        </section>
+    </section>
+  </section>
+</section>

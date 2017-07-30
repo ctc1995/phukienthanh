@@ -1,0 +1,46 @@
+section.panel.panel-default{
+    background-color: transparent;
+    border: 0;
+}
+.content{
+    width: 80%;
+    font-size: 16px;
+    margin: 0 auto;
+    display: block;
+    border: 1px solid #ddd;
+    .panel-heading{
+        background: #83e329;
+        color: #fff;
+        padding: 15px 20px;
+        h3{font-size: 19px;}
+    }
+    .panel-body{
+        background-color: #fff;
+        padding: 15px 20px;
+        .number{font-weight: bold;}
+    }
+}
+.service{
+    padding:0 20px 30px;
+    h2{
+        margin-bottom: 25px;
+    }
+    h4{
+        margin: 15px 0;
+        font-weight: bold;
+    }
+}
+.return{
+    padding:0 20px 30px;
+}
+.build{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    i{
+        font-size: 55px;
+        margin-bottom: 10px;
+    }
+}

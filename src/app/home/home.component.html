@@ -1,0 +1,37 @@
+<section class="row tab-pro">
+  <section class="content">
+    <section class="btn-group tab-title">
+      <li class="btn btn-default tab-title-item" *ngFor="let v of tabTitle let i=index" (click)="selectTab(i)" [ngClass]="{'active': selected == i}">
+        {{v}}
+      </li>
+    </section>
+    <section class="row tab-content">
+      <section class="col-md-4" *ngFor="let item of tabJSON[selected].item">
+        <section class="tab-card">
+          <section class="card-top">
+            <section class="prod-name">
+              {{item.name}}
+            </section>
+            <section class="prod-price">
+              {{item.price}}
+            </section>
+          </section>
+          <section class="card-body">
+            <section class="thumbnail">
+              <img src="{{item.pic}}" alt="{{item.intro.title}}">
+            </section>
+            <section class="entry-card">
+              <p>{{item.intro.title}}</p>
+              <ul>
+                <li *ngFor="let introItem of item.intro.content">
+                  {{introItem}}
+                </li>
+              </ul>
+              <a class="btn btn-default" (click)="onSelect(item.name)">Xem chi tiết</a>
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,120 @@
+<section>
+<section class="row three-block">
+    <section class="content">
+        <section class="row block-sec">
+            <section class="col-md-4">
+                <section class="box">
+                    <i class="iconfont icon-dianzan"></i>
+                    <p>ÚY TÍN HÀNG ĐẦU</p>
+                    <span>Cam kết chất lượng 100%</span>
+                </section>
+            </section>
+            <section class="col-md-4">
+                <section class="box">
+                    <i class="iconfont icon-feiji"></i>
+                    <p>VẬN CHUYỂN SIÊU TỐC</p>
+                    <span>Giao trong ngày với hầu hết các mặt hàng</span>
+                </section>
+            </section>
+            <section class="col-md-4">
+                <section class="box">
+                    <i class="iconfont icon-mi"></i>
+                    <p>SẢN PHẨM CHÍNH HÃNG</p>
+                    <span>Đơn vị phân phối độc quyền của xiaomi & Titan</span>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
+<section class="row mail">
+    <section class="content">
+        <section class="row">
+            <section class="col-md-4 e-mail">
+                <section class="icon">
+                    <i class="glyphicon glyphicon-envelope"></i>
+                </section>
+                <section>
+                    <span>
+                        Đăng kí nhận báo giá
+                        <br>
+                        ừ PHỤ KIỆN VIỆT TRUNG
+                    </span>
+                </section>
+            </section>
+            <section class="col-md-4">
+                <section>
+                    <span>
+                        Cập nhật thông tin khuyến mãi nhanh nhất
+                        <br>
+                        Hưởng quyền lợi giảm giá riêng biệt
+                    </span>
+                </section>
+            </section>
+            <section class="col-md-4">
+                <section class="input-group">
+                    <input type="text" class="form-control" placeholder="Nhập địa chỉ email của bạn" aria-describedby="basic-addon2">
+                    <span class="input-group-addon" id="basic-addon2"> Gửi</span>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
+<footer>
+    <section class="content">
+        <section class="logo">
+            <img src="../../assets/image/top-logo.png" alt="FooterLogo">
+        </section>
+        <section class="row col-md-12 web-footer">
+            <section class="col-md-5 link">
+                <p class="box-title">
+                    GIỚI THIỆU PHỤ KIỆN VIỆT TRUNG
+                </p>
+                <ul>
+                    <li *ngFor="let item of linkLists">
+                        <a routerLink="/contact{{item.href}}">{{item.title}}</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="col-md-4">
+                <p class="box-title">
+                    HỖ TRỢ KHÁCH HÀNG
+                </p>
+                <section>
+                    <li class="phone" *ngFor="let item of numberLists">
+                        <i class="glyphicon glyphicon-phone-alt"></i>&nbsp;&nbsp;
+                        {{item.name}}：
+                        <span *ngFor="let number of item.number">
+                            {{number}}
+                        </span>
+                    </li>
+                    <span class="time">
+                        <i class="glyphicon glyphicon-time"></i>&nbsp;&nbsp;
+                        Từ 9h00 - 18h30, Thứ 2 - Chủ nhật
+                    </span>
+                </section>
+            </section>
+            <section class="col-md-3">
+                <p class="box-title">
+                    ĐỊA CHỈ
+                </p>
+                <i class="iconfont icon-dingwei"></i>
+                <span *ngFor="let item of address">
+                    {{item.province}}
+                    <br>
+                    {{item.city}}
+                    <br>
+                    {{item.town}}
+                    <br>
+                    {{item.street}}
+                    <br>
+                    {{item.doorplate}}
+                </span>
+            </section>
+        </section>
+    </section>
+</footer>
+<section class="info">
+    <p>Giấy chứng nhận Đăng ký Kinh doanh số 0106920712 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp ngày 31/07/2015</p>
+    <p>© Bản quyền - PHỤ KIỆN VIỆT TRUNG - Tất cả bản quyền được bảo lưu vui lòng ghi rõ nguồn nếu bạn sử dụng lại bất cứ thông tin hoặc hình ảnh nào tại websit</p>
+</section>
+</section>

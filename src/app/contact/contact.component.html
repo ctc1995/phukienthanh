@@ -1,0 +1,146 @@
+<section class="panel panel-default" [hidden]="showComponent != 'contact'">
+  <section class="content">
+    <section class="panel-heading">
+      <h3 class="panel-title">LIÊN HỆ</h3>
+    </section>
+    <section class="panel-body">
+      <section *ngFor="let item of JSON">
+        <h3>{{item.name}}</h3>
+        <p>
+          Địa chỉ : {{item.address['doorplate']}} {{item.address['street']}}-{{item.address['town']}}-{{item.address['city']}}-{{item.address['province']}}
+        </p>
+        <p>
+          Hotline : <span *ngFor="let number of item.number" class="number">{{number}} - </span>
+        </p>
+        <p>
+          Gmail : <span *ngFor="let email of item.email">{{email}} , </span>
+        </p>
+      </section>
+    </section>
+  </section>
+</section>
+<section class="panel panel-default" [hidden]="showComponent != 'intro'">
+  <section class="content">
+    <section class="panel-heading">
+      <h3 class="panel-title">GIỚI THIỆU</h3>
+    </section>
+    <section class="panel-body">
+      <section style="padding: 15px;">
+        <h3 style="text-align: center;"><b>GIỚI THIỆU VỀ CÔNG TY TNHH LINH PHỤ KIỆN DI ĐỘNG VIỆT TRUNG</b></h3>
+      </section>
+    </section>
+  </section>
+</section>
+<section class="panel panel-default" [hidden]="showComponent != 'privacy'">
+  <section class="content">
+    <section class="panel-heading">
+      <h3 class="panel-title">CHÍNH SÁCH BẢO MẬT</h3>
+    </section>
+    <section class="panel-body">
+      <section style="padding: 15px;">
+        <p>
+          <b>* Đối với các khách lẻ :</b>
+          <span>Việt Trung không có chính sách thu thập thông tin cá nhân  </span>
+        </p>
+        <p>
+         <b>* Đối với các khách mua sỉ ,mua buôn : </b>
+         <span>Việt Trung cam kết bảo mật thông tin khách hàng & đơn hàng các Đại lý của Việt Trung</span>
+        </p>
+      </section>
+    </section>
+  </section>
+</section>
+<section class="panel panel-default" [hidden]="showComponent != 'service'">
+  <section class="content">
+    <section class="panel-heading">
+      <h3 class="panel-title">ĐIỀU KHOẢN DỊCH VỤ</h3>
+    </section>
+    <section class="panel-body">
+      <section class="service">
+        <h3>Chính sách & Quy định chung</h3>
+        <section>
+
+          <h4>Chính sách đổi/trả và hoàn tiền</h4>
+          <section>* Việt Trung không nhận đổi trả hàng (nếu sản phẩm không có lỗi)</section>      
+          <section>
+            *Trong trường hợp hàng Bảo hành mà Việt Trung hết sản phẩm cùng loại để đổi mới ,Việt Trung sẽ hỗ trợ đối sang sản phẩm khác tương đương hoặc hoàn lại tiền cho quý khách
+          </section>
+        </section>
+
+        <section>
+
+          <h4>Chính sách bảo hành</h4>
+          <section>
+            *Việt Trung bảo hành từ 1 đến 12 tháng đối với tất cả các sản phẩm
+          </section>      
+          <section>
+            *Đối với khách mua sỉ , chỉ chấp nhận Bảo Hành hàng lỗi do sản xuất, ko bảo hành đối với các hỏng hóc do người sử dụng                                
+          </section>
+          <section>
+            *Đối với khách lẻ , chỉ chấp nhận Bảo Hành với các sản phẩm còn nguyên tem bảo hành & có giấy bảo hành của Việt Trung
+          </section>
+        </section>
+
+        <section>
+
+          <h4>Chính sách vận chuyển, giao nhận</h4>
+          <section>
+            *Đối với các khách hàng ở tỉnh gần , Việt Trung sẽ chuyển hàng qua xe khách để đảm bảo giao hàng nhanh nhất & giá cước vận chuyển là rẻ nhất cho khách hàng  
+          </section>
+          <section>
+            *Đối với các khách hàng ở xa , Việt Trung hiện là đối tác của Viettel, Bồ Câu đảm bảo giao hàng đúng hẹn & chính xác cho tất cả quý khách hàng trên khắp cả nước
+          </section>
+        </section>
+
+        <section>
+
+          <h4>Chính sách & Quy định chung</h4>
+          <section>
+            *Phụ kiện Việt Trung cam kết các sản phẩm bán ra đều là hàng mới 100% , có nguồn gốc xuất xứ rõ ràng
+          </section>
+        </section>
+
+        <section>
+
+          <h4>Quy định và hình thức thanh toán</h4>
+          <section>
+            *Đối với khách hàng mua sỉ , mua buôn mời liên hệ trực tiếp 09648.33333 - 0961760.888 để đặt hàng và được báo giá với số lượng chính xác nhất. 
+          </section>
+          <section>
+            *Đối với khách hàng mua lẻ có thể đặt hàng tại website http://phukienviettrung.vn hoặc tới trực tiếp địa chỉ 73A Cù Chính Lan -Thanh Xuân - Hà Nội để mua hàng với giá ưu đãi nhất
+          </section>
+          <section>
+            *Việt Trung chỉ chấp nhận thanh toán bằng tiền mặt hoặc chuyển khoản qua ngân hàng.
+          </section>
+        </section>
+
+      </section>
+    </section>
+  </section>
+</section>
+<section class="panel panel-default" [hidden]="showComponent != 'return'">
+  <section class="content">
+    <section class="panel-heading">
+      <h3 class="panel-title">CHÍNH SÁCH HOÀN TRẢ</h3>
+    </section>
+    <section class="panel-body">
+      <section class="return">
+        <h3>Chính sách đổi/trả và hoàn tiền</h3>
+        <section>
+        * Việt Trung không nhận đổi trả hàng (nếu sản phẩm không có lỗi)
+        </section>      
+        <section>
+          *Trong trường hợp hàng Bảo hành mà Việt Trung hết sản phẩm cùng loại để đổi mới ,Việt Trung sẽ hỗ trợ đối sang sản phẩm khác tương đương hoặc hoàn lại tiền cho quý khách
+        </section>
+      </section>
+    </section>
+  </section>
+</section>
+<section class="panel panel-default" [hidden]="showComponent != 'build'">
+  <section class="content">
+    <section class="panel-body build">
+      <i class="glyphicon glyphicon-alert"></i>
+      <span>Đang cập nhật...</span>
+    </section>
+  </section>
+</section>

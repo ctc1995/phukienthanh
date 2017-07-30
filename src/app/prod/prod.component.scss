@@ -1,0 +1,200 @@
+.prod{
+    width: 100%;
+    .content{
+        width: 80%;
+        margin: 0 auto;
+        display: block;
+        .prod-card{
+            margin: 0;
+            .prod-img{
+                display: -webkit-box;
+                display: -moz-box;
+                display: box;
+                -webkit-box-align: center;
+                -moz-box-align: center;
+                box-align: center;
+                -webkit-box-pack: center;
+                -moz-box-pack: center;
+                box-pack: center;
+                background-color: #fff;
+                box-shadow: 1px 1px 2px #ddd;
+                img{
+                    width: 100%;
+                    max-height: 280px;
+                }
+            }
+            .prod-info{
+                height: 280px;
+                background-color: #fff;
+                margin-right: -10px;
+                padding: 15px 30px;
+                .title{
+                    font-size: 24px;
+                    color: #80e324;
+                    padding-bottom: 2px;
+                }
+                a{
+                    text-decoration: none;
+                    color: #6D6D6D;
+                }
+                .price{
+                    font-size: 24px;
+                    font-weight: bold;
+                    color: #F15A24;
+                    margin-top: 8px;
+                }
+                .description{
+                    p{
+                        padding-top: 10px;
+                        margin: 0;
+                        font-size: 16px;
+                        font-weight: bold;
+                    }
+                    ul{
+                        list-style: none;
+                        padding-top: 10px;
+                        padding-left: 15px;
+                        li{
+                            padding-top: 5px;
+                            text-align: initial;
+                            background: url(../../assets/image/tich-2.png) left 7px no-repeat;
+                            padding-left: 20px;
+                            list-style: none;
+                        }
+                    }
+                }
+            }
+        }
+        .prod-descr{
+            margin: 40px 0 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            .tab-title{
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                .tab-title-content{
+                    padding: 0;
+                    .tab-title-item{
+                        display: inline;
+                        padding: 15px 35px;
+                        margin: 0 3px;
+                        border-radius: 0;
+                        border-top-left-radius: 10px;
+                        border-top-right-radius: 10px;
+                        border: 0;
+                    }
+                    .tab-title-item:hover, .active{
+                        background-color: #80e324;
+                        color: #fff;
+                        box-shadow: none;
+                    }
+                }
+                .tab-content{
+                    margin-top: 13px;
+                    border-radius: 0;
+                }
+            }
+            .correlation{
+                height: 100%;
+                color: #83e329;
+                font-weight: bold;
+                padding-left: 30px;
+                .tab-card{
+                    margin-bottom: 5px;
+                    border: 5px solid transparent;
+                    -moz-transition: all 0.3s ease 0s;
+                    -webkit-transition: all 0.3s ease 0s;
+                    -o-transition: all 0.3s ease 0s;
+                    -ms-transition: all 0.3s ease 0s;
+                    transition: all 0.3s ease 0s;
+                    .card-top{
+                        height: 50px;
+                        background-color: #fff;
+                        font-size: 16px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        border-bottom: 1px solid #ddd;
+                        section{
+                            display: inline-block;
+                        }
+                        .prod-name{
+                            width: 70%;
+                            line-height: 25px;
+                            padding: 0 15px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                        .prod-price{
+                            width: 35%;
+                            height: 100%;
+                            line-height: 45px;
+                            background-color: #83e329;
+                            color: #FFFF00;
+                            font-family: initial;
+                            font-size: 17px;
+                            text-align: center;
+                        }
+                    }
+                    .card-body{
+                        position: relative;
+                        .thumbnail{
+                            margin: 0;
+                            padding: 0;
+                            border: 0;
+                            img{
+                                height: 207px;
+                            }
+                        }
+                        .entry-card{
+                            height: 207px;
+                            width: 100%;
+                            background-color: rgba(131, 227, 41, 0.9);
+                            color: #fff;
+                            position: absolute;
+                            top: 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            opacity: 0;
+                            transition: all .25s ease-out 0s;
+                            -webkit-transition: all .25s ease-out 0s;
+                            -o-transition: all .25s ease-out 0s;
+                            -moz-transition: all .25s ease-out 0s;
+                            ul{
+                                li{
+                                    text-align: initial;
+                                    background: url('../../assets/image/tich.png') left 7px no-repeat;
+                                    padding-left: 20px;
+                                    list-style: none;
+                                }
+                            }
+                            a{
+                                display: inline-flex;
+                                width: 120px;
+                                justify-content: center;
+                                border: 0;
+                                color: #388E3C;
+                            }
+                        }
+                    }
+                    .card-bottom{
+
+                    }
+                }
+                .tab-card:hover{
+                    border: 5px solid rgba(131, 227, 41, .9);
+                    padding: 0;
+                    .card-body{
+                        .entry-card{
+                            opacity:1
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

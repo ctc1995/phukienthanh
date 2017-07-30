@@ -1,0 +1,18 @@
+.guide{
+    background-color: transparent;
+    border: 0;
+    .content{
+        width: 80%;
+        margin: 0 auto;
+        .panel-heading{
+            background: #83e329;
+            color: #fff;
+            padding: 15px 20px;
+            h3{font-size: 19px;}
+        }
+        .panel-body{
+            background-color: #fff;
+            padding: 50px 30px;
+        }
+    }
+}
