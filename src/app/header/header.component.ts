@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { Router } from '@angular/router'
+import { GetHttp } from '../core/getHttp.service'
 import { SharpService } from '../core/sharp.serivce'
 
 @Component({
@@ -9,6 +10,7 @@ import { SharpService } from '../core/sharp.serivce'
 })
 
 export class HeaderComponent {
+    forParent: string;
     selected: number;
     enterNumber: number;
     isToggle: boolean =  false;
@@ -25,7 +27,8 @@ export class HeaderComponent {
     slides:Array<any> = ['../../assets/image/phanphoi.png','../../assets/image/top-logo.png'];
     constructor(
         private router: Router,
-        private sharpService: SharpService
+        private sharpService: SharpService,
+        private getHttp: GetHttp
     ) {
         this.sharpService.dySb.subscribe(v=>{
             this.isToggle = v[0];
@@ -55,7 +58,7 @@ export class HeaderComponent {
                 url:"contact"
             },
         ]
-        this.treeLists =  [
+        /*this.treeLists =  [
             {
                 id: 1,
                 text: "Favorites",
@@ -113,7 +116,8 @@ export class HeaderComponent {
                     { id: 12, pid: 8, text: "Downloads", descr: "computer-icons downloads" }
                 ]
             },
-        ];
+        ];*/
+        this.getTypeLists();
     }
     onIndex(){
         this.sharpService.dySb.next([false,true,true])
@@ -141,12 +145,19 @@ export class HeaderComponent {
             this.navToggle = toogle;
         }
     }
+    getTypeLists(){
+        this.getHttp.getData(null, this.sharpService.API.getType).subscribe(
+            res=>{
+                this.treeLists = res;
+            }
+        )
+    }
     navExpand(i){
-        if(this.treeLists[i].hasOwnProperty('items')){
-            this.enterNumber = this.treeLists[i]['items'][0]['pid']
+        if(this.treeLists[i]['items'].length != 0){
+            this.forParent = this.treeLists[i]['name']
         }
     }
     navCollapse(){
-        this.enterNumber = null;
+        this.forParent = null;
     }
 }

@@ -56,20 +56,20 @@
                 <li *ngFor="let item of treeLists let i = index" 
                     (mouseenter)="navExpand(i);"
                     (mouseleave)="navCollapse();"
-                    (click)="onSelect(item.text)">
+                    (click)="onSelect(item.name)">
                     <p>
-                        <span class="tree-text">{{item.text}}</span>
+                        <span class="tree-text">{{item.name}}</span>
                         <span class="tree-descr">{{item.descr}}</span>
                     </p>
                     <i class="glyphicon glyphicon-menu-right"></i>
-                    <section class="list-child" *ngIf="item['items'] && enterNumber == item.id">
+                    <section class="list-child" *ngIf="item['items'] && forParent == item.name">
                         <section class="list-header list-child-header">
-                            {{item.text}}
+                            {{item.name}}
                         </section>
-                        <section class="list-body">
-                            <li *ngFor="let childItem of item['items'] let i = index">
+                        <section class="list-body list-child-body">
+                            <li *ngFor="let childItem of item['items'] let i = index" (click)="onSelect(item.name)">
                                 <p>
-                                    <span class="tree-text">{{childItem.text}}</span>
+                                    <span class="tree-text">{{childItem.name}}</span>
                                     <span class="tree-descr">{{childItem.descr}}</span>
                                 </p>
                             </li>

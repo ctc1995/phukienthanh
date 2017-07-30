@@ -16,4 +16,13 @@ export class SharpService{
         this.navToggle = navToggle;
         this.carouselToggle = carouselToggle;
     }
+    private httpHader = "http://"
+    private address = "192.168.140.129:3000/";//10.28.83.150:3000/   192.168.30.105:3000/
+    public API={
+        postApi: this.httpHader + this.address+"get/post",
+        getProd: this.httpHader + this.address + "get/product",
+        getType: this.httpHader + this.address + "get/type",
+        getNews: this.httpHader + this.address + "get/news",
+        getWebInfo: this.httpHader + this.address + "get/webInfo",
+    }
 }
