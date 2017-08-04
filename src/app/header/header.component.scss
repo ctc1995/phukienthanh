@@ -11,7 +11,7 @@ header{
     max-height: 90px;
     background-color: #fff;
     color: #83e329;
-    padding-top: 15px;
+    padding: 10px 0;
     overflow: hidden;
     margin: 0;
     i{
@@ -25,6 +25,11 @@ header{
         p:last-child{
             text-align: center;
         }
+    }
+    .header-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .header-left{
         p{
@@ -182,10 +187,13 @@ nav{
         height: auto;
         max-height: none;
         padding-bottom: 10px;
-        .header-right{
-            p:last-child{
-                text-align: left;
+        .header-left{
+            p{
+                display: inline-block;
             }
+        }
+        .header-right{
+            display: none;
         }
         p{
             margin-bottom: 3px;

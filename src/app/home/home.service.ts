@@ -12,7 +12,7 @@ export class HomeService{
                     {
                         name:"Củ sạc nhanh TITan 2 cổng New",
                         price:"250,000 ₫",
-                        pic:"../../assets/image/prodPic/13138732_235217886868479_7289910056908337875_n - Copy.jpg",
+                        pic:"../../assets/image/prodPic/20170731141229.jpg",
                         intro:{
                             title:"hàng chính hãng titan việt nam",
                             content:[]

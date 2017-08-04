@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router'
 import { GetHttp } from '../core/getHttp.service'
 import { SharpService } from '../core/sharp.serivce'
@@ -9,7 +9,7 @@ import { SharpService } from '../core/sharp.serivce'
     styleUrls: ['./header.component.scss']
 })
 
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
     forParent: string;
     selected: number;
     enterNumber: number;
@@ -17,14 +17,18 @@ export class HeaderComponent {
     navToggle: boolean =  true;
     carouselToggle: boolean =  true;
     navLists: Array<Object>;
+    //类别树
     treeLists: Array<Object>;
+    // 热线电话
+    hotLine: Object;
+    webInfo: Object;
     //图片轮播速度
     myInterval : number = 1500;
 	noWrapSlides : boolean = false;
     //初始值显示第一张
 	activeSlideIndex : number=0;
     //轮播图片集合
-    slides:Array<any> = ['../../assets/image/phanphoi.png','../../assets/image/top-logo.png'];
+    slides: Array<string> = [];
     constructor(
         private router: Router,
         private sharpService: SharpService,
@@ -118,6 +122,20 @@ export class HeaderComponent {
             },
         ];*/
         this.getTypeLists();
+    }
+    ngOnInit(){
+        this.getWebInfo();
+    }
+    getWebInfo(){
+        this.getHttp.getData(null, this.sharpService.API.getWebInfo).subscribe(
+            res=>{
+                this.webInfo = res;
+                console.log(this.webInfo);
+                this.slides = this.webInfo[0]['lunbo']
+                console.log(this.slides);
+                this.hotLine = this.webInfo[0]['phone'][0];
+            }
+        )
     }
     onIndex(){
         this.sharpService.dySb.next([false,true,true])

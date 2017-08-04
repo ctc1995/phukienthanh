@@ -1,16 +1,21 @@
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 
+import { GetHttp } from '../core/getHttp.service'
+import { SharpService } from '../core/sharp.serivce'
 @Component({
     selector: "page-footer",
     templateUrl: "./footer.component.html",
     styleUrls: ['./footer.component.scss']
 })
 
-export class FooterComponent {
+export class FooterComponent implements OnInit{
     linkLists: Array<any> = [];
     numberLists: Array<object> = [];
-    address:Array<object> = [];
-    constructor() {
+    address:string;
+    constructor(
+        private getHttp: GetHttp,
+        private sharpService: SharpService
+    ) {
         this.linkLists = [
             {
                 "title": "Giới thiệu",
@@ -45,26 +50,16 @@ export class FooterComponent {
                 "href": "/return"
             }
         ]
-        this.numberLists=[
-            {
-                name:'Mr. Việt',
-                number:['09147.33333', '09648.33333', '09149.33333']
-            },
-            {
-                name:'Ms.Thắm ',
-                number:['0961.760.888']
-            },
-            {
-                name:'Hotline',
-                number:['01233.885.885', '0933.128.456 ']
+    }
+    ngOnInit(){
+        this.getWebInfo();
+    }
+    getWebInfo(){
+        this.getHttp.getData(null, this.sharpService.API.getWebInfo).subscribe(
+            res=>{
+                this.numberLists = res[0].phone;
+                this.address = res[0].address;
             }
-        ]
-        this.address = [{
-            province:"Hà Nội",
-            city:"Thanh Xuân",
-            town:"Cù Chính Lan",
-            street:"",
-            doorplate:"73A"
-        }]
+        )
     }
 }

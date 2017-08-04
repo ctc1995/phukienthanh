@@ -1,4 +1,4 @@
-<section>
+<section  *ngFor="let item of webInfo">
 <header class="row">
     <section class="content">
         <section class="col-md-3 header-left">
@@ -6,24 +6,24 @@
                 <i class="iconfont icon-phone"></i>
                 <span class="header-title">Hotline</span>
             </p>
-            <p class="header-phone">0914.733.333</p>  
+            <p class="header-phone">{{hotLine.number[0]}}  {{hotLine.name}}</p>  
         </section>
         <section class="col-md-6 header-center">
             <p>
                 <i class="iconfont icon-gift"></i>
-                <span class="header-title">CHUYÊN PHÂN PHỐI SẢN PHẨM HÃNG AKUS VÀ ATM CHÍNH HÃNG</span>
+                <span class="header-title">{{item.youhui}}</span>
             </p>
-            <p>
+            <!-- <p>
                 Chiết khấu %, hoa hồng cao 
-            </p>
+            </p> -->
         </section>
         <section class="col-md-3 header-right">
             <p>
                 <i class="iconfont icon-icon"></i>
-                <span class="header-title" style="font-size: 15px;">Đơn vị phân phối độc quyền của</span>
+                <span class="header-title">Đại lý độc quyền chất lượng</span>
             </p>
             <p>
-                <img src="../../assets/image/phanphoi.png" alt="">
+                <img src="../../assets/image/phanphoi.png" alt="Apple" style="height:40px;">
             </p>
         </section>
     </section>
@@ -31,12 +31,12 @@
 <nav>
     <section class="content">
         <section>
-            <img src="../../assets/image/top-logo.png" alt="" (click)="onIndex()">
+            <img src="{{item.logo}}" alt="" (click)="onIndex()">
         </section>
         <section class="navbar">
-            <li *ngFor="let item of navLists let i =index" [ngClass]="{'active': selected == i}" (click)="checkStatus(i, item.url)">
-                <i class="iconfont {{item.icon}}"></i>
-                <span>{{item.name}}</span>
+            <li *ngFor="let navItem of navLists let i =index" [ngClass]="{'active': selected == i}" (click)="checkStatus(i, navItem.url)">
+                <i class="iconfont {{navItem.icon}}"></i>
+                <span>{{navItem.name}}</span>
             </li>
         </section>
     </section>
@@ -53,21 +53,21 @@
             </section>
             <!--[ngClass]="navToggle?'':'hidden'"-->
             <section class="list-body" [hidden]="!navToggle" [ngClass]="isToggle?'list-body-Collapse':''">
-                <li *ngFor="let item of treeLists let i = index" 
+                <li *ngFor="let treeItem of treeLists let i = index" 
                     (mouseenter)="navExpand(i);"
                     (mouseleave)="navCollapse();"
-                    (click)="onSelect(item.name)">
+                    (click)="onSelect(treeItem.name)">
                     <p>
-                        <span class="tree-text">{{item.name}}</span>
-                        <span class="tree-descr">{{item.descr}}</span>
+                        <span class="tree-text">{{treeItem.name}}</span>
+                        <span class="tree-descr">{{treeItem.descr}}</span>
                     </p>
                     <i class="glyphicon glyphicon-menu-right"></i>
-                    <section class="list-child" *ngIf="item['items'] && forParent == item.name">
+                    <section class="list-child" *ngIf="treeItem['items'] && forParent == treeItem.name">
                         <section class="list-header list-child-header">
-                            {{item.name}}
+                            {{treeItem.name}}
                         </section>
                         <section class="list-body list-child-body">
-                            <li *ngFor="let childItem of item['items'] let i = index" (click)="onSelect(item.name)">
+                            <li *ngFor="let childItem of treeItem['items'] let i = index" (click)="onSelect(treeItem.name)">
                                 <p>
                                     <span class="tree-text">{{childItem.name}}</span>
                                     <span class="tree-descr">{{childItem.descr}}</span>
