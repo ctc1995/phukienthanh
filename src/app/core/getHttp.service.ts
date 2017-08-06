@@ -10,7 +10,7 @@ export class GetHttp{
         private sharpService: SharpService,
         private http: Http
     ){}
-    public getProd(query){
+    public getProd(query): Observable<any>{
         let api = this.sharpService.API.getProd 
         if(query){
             api += "?name=" + query
@@ -21,7 +21,7 @@ export class GetHttp{
             }
         )
     }
-    public getData(query, api){
+    public getData(query, api): Observable<any>{
         if(query){
             api += "?name=" + query
         }

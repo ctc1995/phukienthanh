@@ -18,7 +18,10 @@ import 'core-js/es6/reflect';
 import 'core-js/es7/reflect';
 import 'zone.js/dist/zone';
 
-import 'Rxjs'
+import 'rxjs/add/operator/map';
+import 'rxjs/operator/delay';
+import 'rxjs/operator/mergeMap';
+import 'rxjs/operator/switchMap';
 
 import '../node_modules/ng2-bootstrap/carousel/index'
 // If you need to support the browsers/features below, uncomment the import
